@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¿Quieres ir a comer sushi conmigo?</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f7f7f7;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    button {
+      font-size: 1.5rem;
+      padding: 15px 30px;
+      margin: 10px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background-color: #4CAF50;
+      color: white;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    #no {
+      background-color: #f44336;
+    }
+
+    #no:hover {
+      background-color: #d32f2f;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>¿Quieres ir de cita a comer sushi conmigo?</h1>
+    <button id="yes">Sí</button>
+    <button id="no">No</button>
+  </div>
+
+  <script>
+    // Selecciona los botones
+    const noButton = document.getElementById('no');
+    const yesButton = document.getElementById('yes');
+
+    // Mueve el botón "No" al acercar el cursor
+    noButton.addEventListener('mouseenter', function() {
+      const randomX = Math.floor(Math.random() * (window.innerWidth - 100));
+      const randomY = Math.floor(Math.random() * (window.innerHeight - 50));
+      noButton.style.position = 'absolute';
+      noButton.style.left = `${randomX}px`;
+      noButton.style.top = `${randomY}px`;
+    });
+
+    // Muestra un mensaje al hacer clic en "Sí"
+    yesButton.addEventListener('click', function() {
+      alert('¡Sabía que dirías que sí! 🥰 Nos vemos pronto en el sushi.');
+    });
+
+    // Muestra un mensaje al hacer clic en "No"
+    noButton.addEventListener('click', function() {
+      alert('¡No puedes decir que no! 😜');
+    });
+  </script>
+
+</body>
+</html>
